@@ -19,9 +19,11 @@
     "noFallthroughCasesInSwitch": false,
     "paths": {
       "@app/shared": [
+        "libs/shared/src",
         "libs/shared/src"
       ],
       "@app/shared/*": [
+        "libs/shared/src/*",
         "libs/shared/src/*"
       ]
     }
