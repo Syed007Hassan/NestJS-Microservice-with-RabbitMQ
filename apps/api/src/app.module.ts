@@ -1,7 +1,6 @@
 import { Module } from '@nestjs/common';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
-import { MongooseModule } from '@nestjs/mongoose';
 import { ConfigModule } from '@nestjs/config';
 import { AuthModule } from './auth/auth.module';
 import { UserModule } from './user/user.module';
@@ -14,8 +13,9 @@ import * as redisStore from 'cache-manager-redis-store';
   imports: [
     ConfigModule.forRoot({
       isGlobal: true,
-      envFilePath: `.env`,
+      envFilePath: '.env',
     }),
+
     CacheModule.register({
       isGlobal: true,
       store: redisStore,
@@ -23,7 +23,6 @@ import * as redisStore from 'cache-manager-redis-store';
       port: 6379,
     }),
     TypeOrmModule.forRoot(PostgreSqlDataSource),
-    MongooseModule.forRoot(process.env.MONGODB_URI),
     AuthModule,
     UserModule,
   ],
