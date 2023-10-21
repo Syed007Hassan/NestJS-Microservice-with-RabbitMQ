@@ -6,7 +6,7 @@
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
     "allowSyntheticDefaultImports": true,
-    "target": "ES2021",
+    "target": "es2017",
     "sourceMap": true,
     "outDir": "./dist",
     "baseUrl": "./",
@@ -19,23 +19,11 @@
     "noFallthroughCasesInSwitch": false,
     "paths": {
       "@app/shared": [
-        "libs/shared/src",
         "libs/shared/src"
       ],
       "@app/shared/*": [
-        "libs/shared/src/*",
         "libs/shared/src/*"
       ]
     }
-  },
-  "watchOptions": {
-    "watchFile": "priorityPollingInterval",
-    "watchDirectory": "dynamicprioritypolling",
-    "fallbackPolling": "dynamicPriority",
-    "synchronousWatchDirectory": true,
-    "excludeDirectories": [
-      "**/node_modules",
-      "dist"
-    ]
   }
 }
