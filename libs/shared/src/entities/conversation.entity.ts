@@ -4,7 +4,7 @@ import {
   ManyToMany,
   OneToMany,
   PrimaryGeneratedColumn,
-  UpdateDateColumn,
+  CreateDateColumn,
 } from 'typeorm';
 
 import { UserEntity } from '@app/shared';
@@ -23,6 +23,6 @@ export class ConversationEntity {
   @OneToMany(() => MessageEntity, (messageEntity) => messageEntity.conversation)
   messages: MessageEntity[];
 
-  @UpdateDateColumn()
+  @CreateDateColumn()
   lastUpdated: Date;
 }
